@@ -77,6 +77,14 @@ public class Library
             IgnoreNullValues = true
         };
 
+        if (!File.Exists(path))
+        {
+            var directory = Path.GetDirectoryName(path);
+
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+        }
+
         var itemsWithoutImages = new List<Item>();
         foreach (var item in Items)
         {
@@ -98,15 +106,27 @@ public class Library
 
     public static Library LoadData(string path)
     {
-        if(File.Exists(path))
+        if (!File.Exists(path))
         {
-            var jsonString = File.ReadAllText(path);
-            var items = JsonSerializer.Deserialize<ObservableCollection<Item>>(jsonString);
-            foreach(Item item in items)
-                item.Image = File.Exists(item.ImagePath) ? new Bitmap(item.ImagePath) : File.Exists("Assets/no-image-icon.png") ? new Bitmap(AssetLoader.Open(new Uri("avares://BuySell/Assets/no-image-icon.png"))) : null;
-            return new Library { Items = items };
+            var directory = Path.GetDirectoryName(path);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+
+            var emptyLibrary = new Library();
+            File.WriteAllText(path, JsonSerializer.Serialize(emptyLibrary.Items));
         }
-        else
-            return new Library();
+
+        var jsonString = File.ReadAllText(path);
+        var items = JsonSerializer.Deserialize<ObservableCollection<Item>>(jsonString);
+        foreach (Item item in items)
+        {
+            if (File.Exists(item.ImagePath))
+                item.Image = new Bitmap(item.ImagePath);
+            else if (File.Exists("Assets/no-image-icon.png"))
+                item.Image = new Bitmap("Assets/no-image-icon.png");
+            else
+                item.Image = null;
+        }
+        return new Library { Items = items };
     }
 }
