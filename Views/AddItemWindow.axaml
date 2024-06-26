@@ -1,0 +1,100 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BuySell.ViewModels"
+        xmlns:models="using:BuySell.Models"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BuySell.Views.AddItemWindow"
+        x:DataType="vm:AddItemWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AddItem">
+
+    <Border BorderBrush="#002f34" BorderThickness="50" ClipToBounds="True">
+        <ScrollViewer>
+            <Grid RowDefinitions="80, 260, 80, 80, 80, 80" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid Grid.Row="0" ColumnDefinitions="500, 500">
+                    <Grid Grid.Column="0" RowDefinitions="0.5*, *, Auto" VerticalAlignment="Stretch">
+                        <TextBlock Grid.Row="0" Text="Назва товару*" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                        <TextBox Grid.Row="1" Text="{Binding Name}" Watermark="Назва товару" TextWrapping="Wrap" MaxLength="50" />
+                        <TextBlock Grid.Row="2" Text="Дайте назву товару(не менше 10 символів та не більше 50)!" IsVisible="{Binding ShowNameError}" Foreground="Red"/>
+                    </Grid>
+                    <Grid Grid.Column="1" RowDefinitions="0.5*, *, Auto" VerticalAlignment="Stretch">
+                        <TextBlock Grid.Row="0" Text="Ім'я продавця" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                        <TextBox Grid.Row="1" Text="{Binding SellerName}" Watermark="Ім'я продавця" TextWrapping="Wrap" MaxLength="50"/>
+                        <TextBlock Grid.Row="2" Text="Веддіть щонайменше 10 символів (та не більше 50)!" IsVisible="{Binding ShowSellerNameError}" Foreground="Red"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="*, *">
+                    <Grid Grid.Column="0" Grid.RowDefinitions="0.5*, *, Auto" VerticalAlignment="Stretch">
+                        <TextBlock Grid.Row="0" Text="Опис товару" VerticalAlignment="Center" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                        <TextBox Grid.Row="1" Text="{Binding Description}" Watermark="Опис" TextWrapping="Wrap" AcceptsReturn="True" MaxLength="300"/>
+                        <TextBlock Grid.Row="2" Text="Веддіть щонайменше 50 символів (до 300 символів)" IsVisible="{Binding ShowDescriptionError}" Foreground="Red"/>
+                    </Grid>
+                    <Grid Grid.Column="1" RowDefinitions="0.5*, *, 0.1*">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <TextBlock Grid.Row="0" Text="Теги" VerticalAlignment="Center" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                            <Button Command="{Binding AddItem}" VerticalAlignment="Center" Width="40" Height="40">
+                                <Image Source="{Binding AddImage}"/>
+                            </Button>
+                            <Button Command="{Binding DeleteItem}" VerticalAlignment="Center" Width="40" Height="40">
+                                <Image Source="{Binding DeleteImage}"/>
+                            </Button>
+                        </StackPanel>
+                        <ScrollViewer Grid.Row="1">
+                            <ListBox ItemsSource="{Binding TextBoxes}" SelectedIndex="{Binding SelectedIndex}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBox Text="{Binding TegText, Mode=TwoWay}"/>
+                                    </DataTemplate> 
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                        <TextBlock Grid.Row="2" Text="Задано максимальну кількість елементів 20!" IsVisible="{Binding ShowMaxLengthError}" Foreground="Red"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*, *">
+                    <Grid Grid.Column="0" RowDefinitions="0.5*, *, Auto" VerticalAlignment="Stretch">
+                        <TextBlock Grid.Row="0" Text="Ціна товару" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                        <TextBox Grid.Row="1" Text="{Binding Price}" Watermark="Ціна" TextWrapping="Wrap" MaxLength="9"/>
+                        <TextBlock Grid.Row="2" Text="Веддіть ціну товару(0 - безкоштовно)" IsVisible="{Binding ShowPriceError}" Foreground="Red"/>
+                    </Grid>
+                    <Grid Grid.Column="1" RowDefinitions="0.5*, *, Auto" VerticalAlignment="Stretch">
+                        <TextBlock Grid.Row="0" Text="Номер телефону" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="Auto, *">
+                            <TextBlock Grid.Column="0" Text="+38" Foreground="Silver" Margin="10" VerticalAlignment="Center"/>
+                            <TextBox Grid.Column="1" Text="{Binding Phone}" Watermark="(__)-___-__-__"  TextWrapping="Wrap" />
+                        </Grid>
+                        <TextBlock Grid.Row="2" Text="Перевірте данні номеру телефону" IsVisible="{Binding ShowPhoneError}" Foreground="Red"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3" RowDefinitions="0.5*, *" VerticalAlignment="Stretch">
+                    <TextBlock Grid.Row="0" Text="Адреса проживання" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                    <Grid Grid.Row="1" ColumnDefinitions="*, *, *">
+                        <TextBox Grid.Column="0" Text="{Binding item.Seller.Address[0]}" Watermark="Область" TextWrapping="Wrap" MaxLength="20"/>
+                        <TextBox Grid.Column="1" Text="{Binding item.Seller.Address[1]}" Watermark="Місто" TextWrapping="Wrap" MaxLength="20"/>
+                        <TextBox Grid.Column="2" Text="{Binding item.Seller.Address[2]}" Watermark="Вулиця" TextWrapping="Wrap" MaxLength="20"/>
+                    </Grid>
+                </Grid>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Виберіть фото - " VerticalAlignment="Center" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                    <Button Click="ChosseFileClick" VerticalAlignment="Center" Height="60" Width="60">
+                        <Image Source="{Binding ImageImage}"/>
+                    </Button>
+                    <Grid RowDefinitions="Auto, Auto" VerticalAlignment="Center">
+                        <TextBlock Grid.Row="0" Text="{Binding CurrentFile}" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="Перевірте тип файлу(потрібні .png .jpeg .jpg)" IsVisible="{Binding ShowImageError}" Foreground="Red" VerticalAlignment="Center"/>
+                    </Grid>
+                </StackPanel>
+                <Grid Grid.Row="5" ColumnDefinitions="80, 80" HorizontalAlignment="Center">
+                    <Button Grid.Column="0" HorizontalAlignment="Center" Click="OnSaveButtonClick">
+                        <Image Source="{Binding AddImage}"/>
+                    </Button>
+                    <Button Grid.Column="1" HorizontalAlignment="Center" Click="OnCloseButtonClick">
+                        <Image Source="{Binding DeleteImage}"/>
+                    </Button>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Border>
+</Window>

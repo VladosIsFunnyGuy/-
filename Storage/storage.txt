@@ -1,0 +1,362 @@
+[
+  {
+    "Name": "\u0414\u0443\u0436\u0435 \u043A\u0440\u0443\u0442\u0438\u0439 \u0442\u043E\u0432\u0430\u0440",
+    "Tegs": [
+      {
+        "TegText": "Good 11",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 11",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very good tovar buy me plise buy buy buy recieve reputation\u002B",
+    "Price": 140,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(2).jpg",
+    "Seller": {
+      "Name": "\u0414\u0443\u0436\u0435 \u043A\u0440\u0443\u0442\u0438\u0439 \u043F\u0440\u043E\u0434\u0430\u0432\u0435\u0446\u044C \u043C\u0438\u043A\u043E\u043B\u0430",
+      "Phone": "(426)-266-26-25",
+      "Address": [
+        "\u041D\u0435 \u0456\u0441\u043D\u0443\u0454",
+        "\u0416\u0438\u0442\u043E\u043C\u0438\u0440",
+        "\u041D\u0435 \u0456\u0441\u043D\u0443\u0454"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "\u041F\u0438\u043B\u043E\u0441\u043E\u0441 \u0434\u043B\u0443\u0436\u0435 \u043A\u0440\u0443\u0442\u0438\u0439",
+    "Tegs": [
+      {
+        "TegText": "Good 11",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 11",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "ewgweghiewgoewjgejgjgewgouiewhgewnogewngorewnhgewngewnoi",
+    "Price": 130,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(2).jpg",
+    "Seller": {
+      "Name": "\u041B\u044C\u043E\u0445\u0430 \u0430\u0445\u043C\u0430\u0442",
+      "Phone": "(036)-246-26-44",
+      "Address": [
+        "ssgrewewgew",
+        "gewhewhew",
+        "hgewhewhgew"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 0",
+    "Tegs": [
+      {
+        "TegText": "Good 0",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 0",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 0",
+    "Price": 0,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 0",
+      "Phone": "0960000000",
+      "Address": [
+        "Sumy 0",
+        "Konotop 0",
+        "Stepana Banderi 0"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 1",
+    "Tegs": [
+      {
+        "TegText": "Good 1",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 1",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 1",
+    "Price": 1,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 1",
+      "Phone": "0960000001",
+      "Address": [
+        "Sumy 1",
+        "Konotop 1",
+        "Stepana Banderi 1"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 2",
+    "Tegs": [
+      {
+        "TegText": "Good 2",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 2",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 2",
+    "Price": 2,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 2",
+      "Phone": "0960000002",
+      "Address": [
+        "Sumy 2",
+        "Konotop 2",
+        "Stepana Banderi 2"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 3",
+    "Tegs": [
+      {
+        "TegText": "Good 3",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 3",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 3",
+    "Price": 3,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 3",
+      "Phone": "0960000003",
+      "Address": [
+        "Sumy 3",
+        "Konotop 3",
+        "Stepana Banderi 3"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 4",
+    "Tegs": [
+      {
+        "TegText": "Good 4",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 4",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 4",
+    "Price": 4,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 4",
+      "Phone": "0960000004",
+      "Address": [
+        "Sumy 4",
+        "Konotop 4",
+        "Stepana Banderi 4"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 5",
+    "Tegs": [
+      {
+        "TegText": "Good 5",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 5",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 5",
+    "Price": 5,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 5",
+      "Phone": "0960000005",
+      "Address": [
+        "Sumy 5",
+        "Konotop 5",
+        "Stepana Banderi 5"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 6",
+    "Tegs": [
+      {
+        "TegText": "Good 6",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 6",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 6",
+    "Price": 6,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 6",
+      "Phone": "0960000006",
+      "Address": [
+        "Sumy 6",
+        "Konotop 6",
+        "Stepana Banderi 6"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 7",
+    "Tegs": [
+      {
+        "TegText": "Good 7",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 7",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 7",
+    "Price": 7,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 7",
+      "Phone": "0960000007",
+      "Address": [
+        "Sumy 7",
+        "Konotop 7",
+        "Stepana Banderi 7"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 8",
+    "Tegs": [
+      {
+        "TegText": "Good 8",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 8",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 8",
+    "Price": 8,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 8",
+      "Phone": "0960000008",
+      "Address": [
+        "Sumy 8",
+        "Konotop 8",
+        "Stepana Banderi 8"
+      ]
+    },
+    "Feature": false
+  },
+  {
+    "Name": "Name 9",
+    "Tegs": [
+      {
+        "TegText": "Good 9",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      },
+      {
+        "TegText": "Tovar 9",
+        "Changing": {},
+        "Changed": {},
+        "ThrownExceptions": {}
+      }
+    ],
+    "Description": "Very nice tovar plise buy me 9",
+    "Price": 9,
+    "ImagePath": "/home/vlados/programming/BuySell/Assets/images/image;s=1000x700(1).jpg",
+    "Seller": {
+      "Name": "Seller 9",
+      "Phone": "0960000009",
+      "Address": [
+        "Sumy 9",
+        "Konotop 9",
+        "Stepana Banderi 9"
+      ]
+    },
+    "Feature": false
+  }
+]

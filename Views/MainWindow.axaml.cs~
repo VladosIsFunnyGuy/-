@@ -1,0 +1,28 @@
+using Avalonia.Controls;
+using System;
+using BuySell.Models;
+using BuySell.ViewModels;
+
+namespace BuySell.Views;
+
+public partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        InitializeComponent();
+        DataContext = new MainWindowViewModel();
+    }
+
+    private void ListItems_DoubleClick(object sender, EventArgs e)
+    {
+       if (ListItems.SelectedItems.Count > 0)
+       {
+          Item item = ListItems.SelectedItem as Item;
+          var dialog = new ItemDialogWindow();
+          if (dialog.ShowDialog() == DialogResult.OK)
+          {
+             searchButton_Click(null, null);
+          }
+       }
+    }
+}

@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BuySell.ViewModels"
+        xmlns:models="using:BuySell.Models"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BuySell.Views.FileManagerWindow"
+        x:DataType="vm:FileManagerWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="FileManager">
+
+    <Grid RowDefinitions="Auto, *, Auto">
+        <TextBox Grid.Row="0" Text="{Binding CurrentPath}"/>
+        <ScrollViewer Grid.Row="1">
+            <ListBox ItemsSource="{Binding Files}" SelectedItem="{Binding SelectedItem}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*, *">
+                            <TextBlock Grid.Column="0" Text="{Binding Name}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Path}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+        <Grid Grid.Row="2" ColumnDefinitions="*, Auto">
+            <Button Grid.Column="1" Content="Open file" Click="OpenFileClick"/>
+        </Grid>
+    </Grid>
+
+</Window>

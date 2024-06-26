@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BuySell.ViewModels"
+        xmlns:m="using:BuySell.Models"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BuySell.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="BuySell">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Border BorderBrush="#002f34" BorderThickness="50" ClipToBounds="True">
+        <Grid RowDefinitions="80, 160, *">
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0" Foreground="#23e5db" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Text="NOLX"/>
+                <Button Grid.Column="1" Command="{Binding AddItem}" HorizontalAlignment="Right">
+                    <Image Source="{Binding AddItemImage}"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1" RowDefinitions="1.5*, *, *" Margin="100, 10">
+                <Grid Grid.Row="0" ColumnDefinitions="*, 80">
+                    <TextBox Grid.Column="0" Text="{Binding SearchText}" HorizontalAlignment="Stretch" Watermark="Пошук..."/>
+                    <Button Grid.Column="1" Command="{Binding SearchButton}">
+                        <Image Source="{Binding SearchButtonImage}"/>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="*, *, *">
+                    <TextBox Grid.Column="0" Text="{Binding AddressRegion}" HorizontalAlignment="Stretch" Watermark="Область..."/>
+                    <TextBox Grid.Column="1" Text="{Binding AddressCity}" HorizontalAlignment="Stretch" Watermark="Місто..."/>
+                    <TextBox Grid.Column="2" Text="{Binding AddressStreet}" HorizontalAlignment="Stretch" Watermark="Вулиця..."/>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="50, *, 50, *">
+                    <TextBlock Grid.Column="0" Text="Від" Foreground="#002f34" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <NumericUpDown Grid.Column="1" Value="{Binding PriceFrom}" FormatString="0" Increment="10" Minimum="0" Maximum="2147483647" HorizontalAlignment="Stretch" Watermark="Від..."/>
+                    <TextBlock Grid.Column="2" Text="До" Foreground="#002f34" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <NumericUpDown Grid.Column="3" Value="{Binding PriceTo}" FormatString="0" Increment="10" Minimum="0" Maximum="2147483647" HorizontalAlignment="Stretch" Watermark="До..."/>
+                </Grid>
+            </Grid>
+            <ScrollViewer Grid.Row="2">
+                <ListBox ItemsSource="{Binding ListItems}" SelectedItem="{Binding SelectedItem}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Grid.Row="1" ColumnDefinitions="0.3*, *, 0.3*" Height="200" Margin="10">
+                                <Grid Grid.Column="0" Width="200" Height="200">
+                                    <Border BorderBrush="#002f34" BorderThickness="5" CornerRadius="5" ClipToBounds="True">
+                                        <Image Source="{Binding Image}" Stretch="UniformToFill"/>
+                                    </Border>
+                                </Grid>
+                                <Grid Grid.Column="1" RowDefinitions="60, *">
+                                    <TextBlock Grid.Row="0" Text="{Binding Name}" Foreground="#002f34" FontSize="24" FontWeight="Bold"/>
+                                    <TextBlock Grid.Row="1" Text="{Binding Description}" Foreground="#002f34" FontSize="16" FontWeight="Bold"/>
+                                </Grid>
+                                <Grid Grid.Column="2" RowDefinitions="*, *">
+                                    <TextBlock Grid.Row="0" Text="{Binding Price, StringFormat='{}{0} ГРН'}" Foreground="#002f34" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </ScrollViewer>
+            <TextBlock Grid.Row="2" Text="Отакої! жодного товару не знайдено за запитом, повторіть спробу перевіривши чи все правильно ви вказали  в пошуку." IsVisible="{Binding ShowListError}" Foreground="#808080" FontSize="32" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+    </Border>
+</Window>

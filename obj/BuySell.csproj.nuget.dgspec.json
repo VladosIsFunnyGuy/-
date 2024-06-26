@@ -1,0 +1,101 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/vlados/programming/BuySell/BuySell.csproj": {}
+  },
+  "projects": {
+    "/home/vlados/programming/BuySell/BuySell.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/vlados/programming/BuySell/BuySell.csproj",
+        "projectName": "BuySell",
+        "projectPath": "/home/vlados/programming/BuySell/BuySell.csproj",
+        "packagesPath": "/home/vlados/.nuget/packages/",
+        "outputPath": "/home/vlados/programming/BuySell/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/vlados/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Avalonia": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Desktop": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Diagnostics": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Fonts.Inter": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.ReactiveUI": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.0.10, )"
+            },
+            "Avalonia.Xaml.Behaviors": {
+              "target": "Package",
+              "version": "[11.0.10.9, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.6, 8.0.6]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.106/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:BuySell.ViewModels"
+        xmlns:models="using:BuySell.Models"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="BuySell.Views.ItemDialogWindow"
+        x:DataType="vm:ItemDialogWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="BuySell">
+
+    <ScrollViewer>
+        <Border BorderBrush="#002f34" BorderThickness="50" ClipToBounds="True">
+            <Grid RowDefinitions="80, 250, 80, 80" Margin="80"  VerticalAlignment="Center">
+                <Button Grid.Row="0" Click="OnCloseButtonClick" HorizontalAlignment="Left">
+                    <Image Source="avares://BuySell/Assets/back.png"/>
+                </Button>
+                <Grid Grid.Row="1" ColumnDefinitions="*, *">
+                    <Border Grid.Column="0" BorderBrush="#002f34" BorderThickness="5" CornerRadius="5" ClipToBounds="True">
+                        <Image Source="{Binding item.Image}" Stretch="UniformToFill"/>
+                    </Border>
+                    <Grid Grid.Column="1" RowDefinitions="80, *">
+                        <TextBlock Grid.Row="0" Text="{Binding item.Name}" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="{Binding item.Description}" Margin="20" FontSize="18" FontWeight="Bold"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*, *">
+                    <TextBlock Grid.Column="0" Text="{Binding item.Seller.Name, StringFormat='{}Ім`я продавця {0}'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Grid.Column="1" Text="{Binding item.Seller.Phone, StringFormat='{}Телефон +38{0}'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Row="3" ColumnDefinitions="*, *">
+                    <Grid Grid.Column="0" Grid.RowDefinitions="*, *, *">
+                        <TextBlock Grid.Row="0" Text="{Binding item.Seller.Address[0], StringFormat='{}Область {0}'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Text="{Binding item.Seller.Address[1], StringFormat='{}Місто {0}'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Text="{Binding item.Seller.Address[2], StringFormat='{}Вулиця {0}'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                    <TextBlock Grid.Column="1" Text="{Binding item.Price, StringFormat='{}Ціна {0} ГРН'}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</Window>
